@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Desbravador } from '../models/desbravador';
+import { DesbravadorService } from '../services/desbravador.service';
 
 @Component({
   selector: 'app-desbravador',
   templateUrl: './desbravador.component.html',
   styleUrls: ['./desbravador.component.css']
 })
-export class DesbravadorComponent {
+export class DesbravadorComponent implements OnInit {
   desbravadores: Desbravador[] = [];
+
+  constructor(private desbravadorService: DesbravadorService) { }
+ 
+  ngOnInit(): void {
+    this.getDesbravadores();
+  }
+
+  getDesbravadores() {
+    this.desbravadorService.getDesbravadores().subscribe(desbravadores => this.desbravadores = desbravadores);
+  }
 
   createDesbravador(desbravador: Desbravador) {
     this.desbravadores.push(desbravador);
