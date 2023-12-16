@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Desbravador } from '../models/desbravador';
-import { DesbravadorService } from '../services/desbravador.service';
+import { Desbravador } from '../../models/desbravador';
+import { DesbravadorService } from '../../services/desbravador.service';
 
 @Component({
   selector: 'app-desbravador',
