@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # dbv_app
 =======
 # DbvApp
